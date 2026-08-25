@@ -1,4 +1,8 @@
-// Logic function
+// 2: Connect Event to Logic
+const inputElement = document.querySelector("#input-number");
+const buttonElement = document.querySelector("#btn-enter");
+
+// 3: Logic function
 function fizzBuzzGame(number) {
   const result = [];
 
@@ -16,4 +20,16 @@ function fizzBuzzGame(number) {
   return result;
 }
 
-console.log(fizzBuzzGame(15));
+// console.log(fizzBuzzGame(15));
+
+/* buttonElement.addEventListener("click", function () {
+  console.log("Button Clicked!");
+}); */
+
+// Event binding
+buttonElement.addEventListener("click", function () {
+  const userNum = Number(inputElement.value);
+  const gameResult = fizzBuzzGame(userNum);
+
+  console.log(gameResult);
+});
