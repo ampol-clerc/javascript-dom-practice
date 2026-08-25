@@ -2,6 +2,9 @@
 const inputElement = document.querySelector("#input-number");
 const buttonElement = document.querySelector("#btn-enter");
 
+// 4: Connect Element to Display
+const displayElement = document.querySelector("#display");
+
 // 3: Logic function
 function fizzBuzzGame(number) {
   const result = [];
@@ -26,10 +29,18 @@ function fizzBuzzGame(number) {
   console.log("Button Clicked!");
 }); */
 
-// Event binding
+// Event binding - Event Listener
 buttonElement.addEventListener("click", function () {
   const userNum = Number(inputElement.value);
   const gameResult = fizzBuzzGame(userNum);
+
+  // Reset display
+  displayElement.innerHTML = "";
+
+  // DOM Update - add elements <p> to display
+  gameResult.forEach((item) => {
+    displayElement.innerHTML += `<p>${item}</p>`;
+  });
 
   console.log(gameResult);
 });
