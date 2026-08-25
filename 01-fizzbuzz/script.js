@@ -37,9 +37,18 @@ buttonElement.addEventListener("click", function () {
   // Reset display
   displayElement.innerHTML = "";
 
-  // DOM Update - add elements <p> to display
+  // DOM Update (Render) - add elements <p> to display
   gameResult.forEach((item) => {
-    displayElement.innerHTML += `<p>${item}</p>`;
+    // Dynamic Class Binding
+    let className = "";
+    if (item === "Fizz") {
+      className = "fizz";
+    } else if (item === "Buzz") {
+      className = "buzz";
+    } else if (item === "FizzBuzz") {
+      className = "fizzbuzz";
+    }
+    displayElement.innerHTML += `<p class="${className}">${item}</p>`;
   });
 
   console.log(gameResult);

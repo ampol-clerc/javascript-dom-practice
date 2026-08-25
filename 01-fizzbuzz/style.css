@@ -1,0 +1,15 @@
+/* Styling (Dynamic Class Binding) */
+.fizz {
+  color: orange;
+  font-weight: bold;
+}
+
+.buzz {
+  color: #0088ff;
+  font-weight: bold;
+}
+
+.fizzbuzz {
+  color: purple;
+  font-weight: bold;
+}
