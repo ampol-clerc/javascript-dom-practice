@@ -37,6 +37,7 @@ buttonElement.addEventListener("click", function () {
   // Reset display
   displayElement.innerHTML = "";
 
+  let htmlContent = "";
   // DOM Update (Render) - add elements <p> to display
   gameResult.forEach((item) => {
     // Dynamic Class Binding
@@ -48,8 +49,12 @@ buttonElement.addEventListener("click", function () {
     } else if (item === "FizzBuzz") {
       className = "fizzbuzz";
     }
-    displayElement.innerHTML += `<p class="${className}">${item}</p>`;
+    // Combine the text into memory first
+    htmlContent += `<p class="${className}">${item}</p>`;
   });
+
+  // After the loop ends, draw it all on the page at once
+  displayElement.innerHTML = htmlContent;
 
   console.log(gameResult);
 });
