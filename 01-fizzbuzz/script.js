@@ -30,7 +30,13 @@ function fizzBuzzGame(number) {
 }); */
 
 // Event binding - Event Listener
-buttonElement.addEventListener("click", function () {
+buttonElement.addEventListener("click", handleFizzBuzz);
+
+//Keyboard Event : Trigger when pressing Enter
+inputElement.addEventListener("keydown", handleEnterKeydown);
+
+// Separate the logic of the operation into function : DRY principle, Controller / Event Handler
+function handleFizzBuzz() {
   const userNum = Number(inputElement.value);
   const gameResult = fizzBuzzGame(userNum);
 
@@ -57,4 +63,12 @@ buttonElement.addEventListener("click", function () {
   displayElement.innerHTML = htmlContent;
 
   console.log(gameResult);
-});
+}
+
+// Keyboard event handler
+function handleEnterKeydown(event) {
+  // console.log(event.key);
+  if (event.key === "Enter") {
+    handleFizzBuzz();
+  }
+}
