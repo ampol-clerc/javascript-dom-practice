@@ -38,6 +38,17 @@ inputElement.addEventListener("keydown", handleEnterKeydown);
 // Separate the logic of the operation into function : DRY principle, Controller / Event Handler
 function handleFizzBuzz() {
   const userNum = Number(inputElement.value);
+  // Validation & Error Handling : Guard clause
+  if (!userNum || userNum <= 0) {
+    displayElement.innerHTML = `<p style="color: red;">Please enter a number greater than 0</p>`;
+    return;
+  }
+  if (userNum > 500) {
+    displayElement.innerHTML = `<p style="color: red;">Please enter a number less than 500</p>`;
+    return;
+  }
+
+  // If data passes the check, Start and display normally
   const gameResult = fizzBuzzGame(userNum);
 
   // Reset display
