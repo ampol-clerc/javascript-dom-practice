@@ -68,6 +68,10 @@ function handleFizzBuzz() {
     }
     // Combine the text into memory first
     htmlContent += `<p class="${className}">${item}</p>`;
+
+    // Auto Clear & Focus
+    inputElement.value = "";
+    inputElement.focus();
   });
 
   // After the loop ends, draw it all on the page at once
