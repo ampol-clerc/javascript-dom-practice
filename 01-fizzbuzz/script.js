@@ -1,6 +1,7 @@
 // 2: Connect Event to Logic
 const inputElement = document.querySelector("#input-number");
 const buttonElement = document.querySelector("#btn-enter");
+const clearButtonElement = document.querySelector("#btn-clear");
 
 // 4: Connect Element to Display
 const displayElement = document.querySelector("#display");
@@ -31,6 +32,7 @@ function fizzBuzzGame(number) {
 
 // Event binding - Event Listener
 buttonElement.addEventListener("click", handleFizzBuzz);
+clearButtonElement.addEventListener("click", handleClear);
 
 //Keyboard Event : Trigger when pressing Enter
 inputElement.addEventListener("keydown", handleEnterKeydown);
@@ -86,4 +88,11 @@ function handleEnterKeydown(event) {
   if (event.key === "Enter") {
     handleFizzBuzz();
   }
+}
+
+// Controller for clear
+function handleClear() {
+  inputElement.value = "";
+  displayElement.innerHTML = "";
+  inputElement.focus();
 }
