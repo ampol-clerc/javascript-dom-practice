@@ -38,16 +38,22 @@ body {
 .fizz {
   color: orange;
   font-weight: bold;
+  background-color: #fff3e0 !important;
+  border: 1px solid #ffb74d;
 }
 
 .buzz {
   color: #0088ff;
   font-weight: bold;
+  background-color: #e1f5fe !important;
+  border: 1px solid #81d4fa;
 }
 
 .fizzbuzz {
   color: purple;
   font-weight: bold;
+  background-color: #f3e5f5 !important;
+  border: 1px solid #ba68c8;
 }
 
 .number-input {
