@@ -3,6 +3,17 @@ body {
   font-family: Arial;
 }
 
+/* Display : Grid / Card Layout */
+#display {
+  display: grid;
+
+  /* Specify column width at least 70px and auto-align */
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 12px;
+  margin-top: 25px;
+  max-width: 800px;
+}
+
 /* Styling (Dynamic Class Binding) */
 .fizz {
   color: orange;
