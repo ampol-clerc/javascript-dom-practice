@@ -12,6 +12,13 @@ body {
   min-height: 100vh;
 }
 
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 /* Display : Grid / Card Layout */
 #display {
   display: grid;
@@ -19,7 +26,7 @@ body {
   /* Specify column width at least 70px and auto-align */
   grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   gap: 12px;
-  margin-top: 25px;
+  margin-top: 45px;
   width: 100%;
   max-width: 800px;
 }
@@ -77,8 +84,6 @@ body {
   background-color: green;
   color: white;
   padding: 12px 15px;
-  /* margin-left: 3px; */
-  margin-top: 15px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -90,7 +95,5 @@ body {
   border: none;
   border-radius: 5px;
   padding: 12px 15px;
-  /* margin-left: 3px; */
-  margin-top: 5px;
   cursor: pointer;
 }
