@@ -35,7 +35,7 @@ function fizzBuzzGame(number) {
 buttonElement.addEventListener("click", handleFizzBuzz);
 clearButtonElement.addEventListener("click", handleClear);
 
-//Keyboard Event : Trigger when pressing Enter
+// Keyboard Event : Trigger when pressing Enter
 inputElement.addEventListener("keydown", handleEnterKeydown);
 
 // Separate the logic of the operation into function : DRY principle, Controller / Event Handler
@@ -73,6 +73,7 @@ function handleFizzBuzz() {
     htmlContent += `<p class="${className}">${item}</p>`;
   });
 
+  // DOM update: Game Results
   // After the loop ends, draw it all on the page at once
   displayElement.innerHTML = htmlContent;
 
@@ -83,7 +84,7 @@ function handleFizzBuzz() {
   inputElement.value = "";
   inputElement.focus();
 
-  console.log(gameResult);
+  // console.log(gameResult);
 }
 
 // Keyboard event handler
@@ -99,6 +100,7 @@ function handleClear() {
   inputElement.value = "";
   displayElement.innerHTML = "";
   inputElement.focus();
+  dashboardElement.innerHTML = "";
 }
 
 // Function for Counting Statistics
@@ -117,10 +119,18 @@ function updateDashboard(gameResult) {
     // console.log(item);
   });
 
-  console.log({
+  /* console.log({
     fizz: fizzCount,
     buzz: buzzCount,
     fizzBuzz: fizzBuzzCount,
     numbers: numbersCount,
-  });
+  }); */
+
+  // DOM update: Rendering Statistics
+  dashboardElement.innerHTML = `
+    <p>Fizz: ${fizzCount}</p>
+    <p>Buzz: ${buzzCount}</p>
+    <p>FizzBuzz: ${fizzBuzzCount}</p>
+    <p>Numbers: ${numbersCount}</p>
+    `;
 }
