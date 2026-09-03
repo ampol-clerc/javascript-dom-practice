@@ -12,11 +12,19 @@ body {
   min-height: 100vh;
 }
 
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  text-align: center;
+}
+
 .controls {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 10px;
+  /* Responsive */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Display : Grid / Card Layout */
@@ -130,4 +138,17 @@ body {
 }
 .stat-fizzbuzz {
   color: purple;
+}
+
+@media (max-width: 480px) {
+  .controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .number-input,
+  .enter-button,
+  .clear-button {
+    width: 100%;
+  }
 }
