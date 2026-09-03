@@ -2,6 +2,7 @@
 const inputElement = document.querySelector("#input-number");
 const buttonElement = document.querySelector("#btn-enter");
 const clearButtonElement = document.querySelector("#btn-clear");
+const dashboardElement = document.querySelector("#dashboard");
 
 // 4: Connect Element to Display
 const displayElement = document.querySelector("#display");
@@ -70,14 +71,17 @@ function handleFizzBuzz() {
     }
     // Combine the text into memory first
     htmlContent += `<p class="${className}">${item}</p>`;
-
-    // Auto Clear & Focus
-    inputElement.value = "";
-    inputElement.focus();
   });
 
   // After the loop ends, draw it all on the page at once
   displayElement.innerHTML = htmlContent;
+
+  // Counting statistics
+  updateDashboard(gameResult);
+
+  // Auto Clear & Focus
+  inputElement.value = "";
+  inputElement.focus();
 
   console.log(gameResult);
 }
@@ -95,4 +99,28 @@ function handleClear() {
   inputElement.value = "";
   displayElement.innerHTML = "";
   inputElement.focus();
+}
+
+// Function for Counting Statistics
+function updateDashboard(gameResult) {
+  let fizzCount = 0;
+  let buzzCount = 0;
+  let fizzBuzzCount = 0;
+  let numbersCount = 0;
+
+  gameResult.forEach((item) => {
+    if (item === "Fizz") fizzCount++;
+    else if (item === "Buzz") buzzCount++;
+    else if (item === "FizzBuzz") fizzBuzzCount++;
+    else numbersCount++;
+
+    // console.log(item);
+  });
+
+  console.log({
+    fizz: fizzCount,
+    buzz: buzzCount,
+    fizzBuzz: fizzBuzzCount,
+    numbers: numbersCount,
+  });
 }
