@@ -128,9 +128,9 @@ function updateDashboard(gameResult) {
 
   // DOM update: Rendering Statistics
   dashboardElement.innerHTML = `
-    <p>Fizz: ${fizzCount}</p>
-    <p>Buzz: ${buzzCount}</p>
-    <p>FizzBuzz: ${fizzBuzzCount}</p>
-    <p>Numbers: ${numbersCount}</p>
+    <div class="stat-badge stat-fizz">Fizz : <strong>${fizzCount}</strong></div>
+    <div class="stat-badge stat-buzz">Buzz : <strong>${buzzCount}</strong></div>
+    <div class="stat-badge stat-fizzbuzz">FizzBuzz : <strong>${fizzBuzzCount}</strong></div>
+    <div class="stat-badge stat-numbers">Numbers : <strong>${numbersCount}</strong></div>
     `;
 }

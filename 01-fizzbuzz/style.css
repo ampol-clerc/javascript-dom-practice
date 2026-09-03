@@ -97,3 +97,37 @@ body {
   padding: 12px 15px;
   cursor: pointer;
 }
+
+.dashboard {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  /* Responsive */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-badge {
+  background-color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-badge strong {
+  font-size: 15px;
+}
+
+.stat-fizz {
+  color: orange;
+}
+.stat-buzz {
+  color: #0088ff;
+}
+.stat-fizzbuzz {
+  color: purple;
+}
