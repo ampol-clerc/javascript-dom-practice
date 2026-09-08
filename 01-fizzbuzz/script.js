@@ -1,13 +1,13 @@
-// 2: Connect Event to Logic
+/* 1. DOM Elements Selection */
+// Connect Event to Logic
 const inputElement = document.querySelector("#input-number");
 const buttonElement = document.querySelector("#btn-enter");
 const clearButtonElement = document.querySelector("#btn-clear");
 const dashboardElement = document.querySelector("#dashboard");
-
-// 4: Connect Element to Display
 const displayElement = document.querySelector("#display");
 
-// 3: Logic function
+/* 2. Business Logic */
+// Logic function
 function fizzBuzzGame(number) {
   const result = [];
 
@@ -25,41 +25,8 @@ function fizzBuzzGame(number) {
   return result;
 }
 
-// Event binding - Event Listener
-buttonElement.addEventListener("click", handleFizzBuzz);
-clearButtonElement.addEventListener("click", handleClear);
-
-// Keyboard Event : Trigger when pressing Enter
-inputElement.addEventListener("keydown", handleEnterKeydown);
-
-// Separate the logic of the operation into function : DRY principle, Controller / Event Handler
-function handleFizzBuzz() {
-  const userNum = Number(inputElement.value);
-  // Validation & Error Handling : Guard clause
-  if (!userNum || userNum <= 0) {
-    displayElement.innerHTML = `<p style="color: red;">Please enter a number greater than 0</p>`;
-    return;
-  }
-  if (userNum > 500) {
-    displayElement.innerHTML = `<p style="color: red;">Please enter a number less than 500</p>`;
-    return;
-  }
-
-  // Business Logic : If data passes the check, Start and display normally
-  const gameResult = fizzBuzzGame(userNum);
-
-  // Rendering
-  renderGameCards(gameResult);
-
-  // Counting statistics
-  updateDashboard(gameResult);
-
-  // Auto Clear & Focus
-  inputElement.value = "";
-  inputElement.focus();
-}
-
-// DOM Update : Render function
+/* 3. UI / Render Functions */
+// Render function game cards
 function renderGameCards(results) {
   let htmlContent = "";
   // Add elements <p> to display
@@ -73,32 +40,15 @@ function renderGameCards(results) {
     } else if (item === "FizzBuzz") {
       className = "fizzbuzz";
     }
-    // Combine the text
+    // Combine the texts
     htmlContent += `<p class="${className}">${item}</p>`;
   });
 
-  // DOM update: Game Results
-  // After the loop ends, draw it all on the page at once
+  // DOM update: after the loop ends, draw game results all on the page at once
   displayElement.innerHTML = htmlContent;
 }
 
-// Keyboard event handler
-function handleEnterKeydown(event) {
-  // console.log(event.key);
-  if (event.key === "Enter") {
-    handleFizzBuzz();
-  }
-}
-
-// Controller for clear
-function handleClear() {
-  inputElement.value = "";
-  displayElement.innerHTML = "";
-  inputElement.focus();
-  dashboardElement.innerHTML = "";
-}
-
-// Function for Counting Statistics
+// Render function counting statistics
 function updateDashboard(gameResult) {
   let fizzCount = 0;
   let buzzCount = 0;
@@ -110,18 +60,9 @@ function updateDashboard(gameResult) {
     else if (item === "Buzz") buzzCount++;
     else if (item === "FizzBuzz") fizzBuzzCount++;
     else numbersCount++;
-
-    // console.log(item);
   });
 
-  /* console.log({
-    fizz: fizzCount,
-    buzz: buzzCount,
-    fizzBuzz: fizzBuzzCount,
-    numbers: numbersCount,
-  }); */
-
-  // DOM update: Rendering Statistics
+  // DOM update: rendering statistics
   dashboardElement.innerHTML = `
     <div class="stat-badge stat-fizz">Fizz : <strong>${fizzCount}</strong></div>
     <div class="stat-badge stat-buzz">Buzz : <strong>${buzzCount}</strong></div>
@@ -129,3 +70,51 @@ function updateDashboard(gameResult) {
     <div class="stat-badge stat-numbers">Numbers : <strong>${numbersCount}</strong></div>
     `;
 }
+
+/* 4. Controllers & Handlers */
+// Controller / Event Handler: Manages the game flow (Validation -> Calculation -> Rendering)
+function handleFizzBuzz() {
+  const userNum = Number(inputElement.value);
+  // Validation & error handling : Guard clause
+  if (!userNum || userNum <= 0) {
+    displayElement.innerHTML = `<p style="color: red;">Please enter a number greater than 0</p>`;
+    return;
+  }
+  if (userNum > 500) {
+    displayElement.innerHTML = `<p style="color: red;">Please enter a number less than 500</p>`;
+    return;
+  }
+
+  // Calculation: If data passes the check, Start and display normally
+  const gameResult = fizzBuzzGame(userNum);
+
+  // Rendering Game Cards
+  // Rendering Game Results Statistics
+  renderGameCards(gameResult);
+  updateDashboard(gameResult);
+
+  // Auto clear & focus
+  inputElement.value = "";
+  inputElement.focus();
+}
+
+// Controller for clear
+function handleClear() {
+  inputElement.value = "";
+  displayElement.innerHTML = "";
+  inputElement.focus();
+  dashboardElement.innerHTML = "";
+}
+
+// Keyboard event handler
+function handleEnterKeydown(event) {
+  if (event.key === "Enter") {
+    handleFizzBuzz();
+  }
+}
+
+/* 5. Event Listeners */
+buttonElement.addEventListener("click", handleFizzBuzz);
+clearButtonElement.addEventListener("click", handleClear);
+// Keyboard event: Trigger when pressing Enter
+inputElement.addEventListener("keydown", handleEnterKeydown);
