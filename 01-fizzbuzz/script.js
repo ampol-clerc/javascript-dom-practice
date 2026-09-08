@@ -25,12 +25,6 @@ function fizzBuzzGame(number) {
   return result;
 }
 
-// console.log(fizzBuzzGame(15));
-
-/* buttonElement.addEventListener("click", function () {
-  console.log("Button Clicked!");
-}); */
-
 // Event binding - Event Listener
 buttonElement.addEventListener("click", handleFizzBuzz);
 clearButtonElement.addEventListener("click", handleClear);
@@ -51,15 +45,25 @@ function handleFizzBuzz() {
     return;
   }
 
-  // If data passes the check, Start and display normally
+  // Business Logic : If data passes the check, Start and display normally
   const gameResult = fizzBuzzGame(userNum);
 
-  // Reset display
-  displayElement.innerHTML = "";
+  // Rendering
+  renderGameCards(gameResult);
 
+  // Counting statistics
+  updateDashboard(gameResult);
+
+  // Auto Clear & Focus
+  inputElement.value = "";
+  inputElement.focus();
+}
+
+// DOM Update : Render function
+function renderGameCards(results) {
   let htmlContent = "";
-  // DOM Update (Render) - add elements <p> to display
-  gameResult.forEach((item) => {
+  // Add elements <p> to display
+  results.forEach((item) => {
     // Dynamic Class Binding
     let className = "";
     if (item === "Fizz") {
@@ -69,22 +73,13 @@ function handleFizzBuzz() {
     } else if (item === "FizzBuzz") {
       className = "fizzbuzz";
     }
-    // Combine the text into memory first
+    // Combine the text
     htmlContent += `<p class="${className}">${item}</p>`;
   });
 
   // DOM update: Game Results
   // After the loop ends, draw it all on the page at once
   displayElement.innerHTML = htmlContent;
-
-  // Counting statistics
-  updateDashboard(gameResult);
-
-  // Auto Clear & Focus
-  inputElement.value = "";
-  inputElement.focus();
-
-  // console.log(gameResult);
 }
 
 // Keyboard event handler
