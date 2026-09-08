@@ -1,3 +1,5 @@
+/* Architecture Flow */
+/* 1. Base & Reset */
 /* Reset for all divs */
 *,
 *::before,
@@ -19,11 +21,13 @@ body {
   min-height: 100vh;
 }
 
+/* 2. Typography */
 h1 {
   font-size: clamp(1.5rem, 5vw, 2.2rem);
   text-align: center;
 }
 
+/* 3. Controls (Input & Buttons) */
 .controls {
   display: flex;
   align-items: center;
@@ -32,60 +36,6 @@ h1 {
   /* Responsive */
   flex-wrap: wrap;
   justify-content: center;
-}
-
-/* Display : Grid / Card Layout */
-#display {
-  display: grid;
-
-  /* Specify column width at least 70px and auto-align */
-  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-  gap: 12px;
-  margin-top: 45px;
-  width: 100%;
-  max-width: 800px;
-}
-
-/* Card styling */
-#display p {
-  background-color: white;
-  font-size: 15px;
-  text-align: center;
-  border-radius: 8px;
-  margin: 0;
-  padding: 16px 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-/* Adds a slight bounce effect when hovering the mouse over it (Hover Effect) */
-#display p:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Styling (Dynamic Class Binding) */
-.fizz {
-  color: orange;
-  font-weight: bold;
-  background-color: #fff3e0 !important;
-  border: 1px solid #ffb74d;
-}
-
-.buzz {
-  color: #0088ff;
-  font-weight: bold;
-  background-color: #e1f5fe !important;
-  border: 1px solid #81d4fa;
-}
-
-.fizzbuzz {
-  color: purple;
-  font-weight: bold;
-  background-color: #f3e5f5 !important;
-  border: 1px solid #ba68c8;
 }
 
 .number-input {
@@ -113,6 +63,7 @@ h1 {
   cursor: pointer;
 }
 
+/* 4. Summary Dashboard */
 .dashboard {
   display: flex;
   gap: 12px;
@@ -145,6 +96,62 @@ h1 {
 }
 .stat-fizzbuzz {
   color: purple;
+}
+
+/* 5. Card Grid Display */
+/* Display : Grid / Card Layout */
+#display {
+  display: grid;
+
+  /* Specify column width at least 70px and auto-align */
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 12px;
+  margin-top: 45px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Card styling */
+.card {
+  background-color: white;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 0;
+  padding: 16px 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* Adds a slight bounce effect when hovering the mouse over it (Hover Effect) */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 6. Dynamic Class Binding (Themes) */
+/* Styling (Dynamic Class Binding) */
+.fizz {
+  color: orange;
+  font-weight: bold;
+  background-color: #fff3e0;
+  border: 1px solid #ffb74d;
+}
+
+.buzz {
+  color: #0088ff;
+  font-weight: bold;
+  background-color: #e1f5fe;
+  border: 1px solid #81d4fa;
+}
+
+.fizzbuzz {
+  color: purple;
+  font-weight: bold;
+  background-color: #f3e5f5;
+  border: 1px solid #ba68c8;
 }
 
 @media (max-width: 480px) {

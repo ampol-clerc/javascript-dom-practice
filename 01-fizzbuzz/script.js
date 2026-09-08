@@ -41,7 +41,7 @@ function renderGameCards(results) {
       className = "fizzbuzz";
     }
     // Combine the texts
-    htmlContent += `<p class="${className}">${item}</p>`;
+    htmlContent += `<p class="card ${className}">${item}</p>`;
   });
 
   // DOM update: after the loop ends, draw game results all on the page at once
