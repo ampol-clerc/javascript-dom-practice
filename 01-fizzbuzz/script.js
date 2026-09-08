@@ -75,13 +75,17 @@ function updateDashboard(gameResult) {
 // Controller / Event Handler: Manages the game flow (Validation -> Calculation -> Rendering)
 function handleFizzBuzz() {
   const userNum = Number(inputElement.value);
-  // Validation & error handling : Guard clause
+  // Validation & error handling: Guard clause
   if (!userNum || userNum <= 0) {
-    displayElement.innerHTML = `<p style="color: red;">Please enter a number greater than 0</p>`;
+    alert("Please enter a number greater than 0");
+    inputElement.value = "";
+    inputElement.focus();
     return;
   }
   if (userNum > 500) {
-    displayElement.innerHTML = `<p style="color: red;">Please enter a number less than 500</p>`;
+    alert("Please enter a number less than 500");
+    inputElement.value = "";
+    inputElement.focus();
     return;
   }
 
