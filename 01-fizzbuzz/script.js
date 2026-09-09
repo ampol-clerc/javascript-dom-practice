@@ -5,6 +5,8 @@ const buttonElement = document.querySelector("#btn-enter");
 const clearButtonElement = document.querySelector("#btn-clear");
 const dashboardElement = document.querySelector("#dashboard");
 const displayElement = document.querySelector("#display");
+const btnFilterAll = document.querySelector("#btn-filter-all");
+const btnFilterFizz = document.querySelector("#btn-filter-fizz");
 
 // Global State
 let currentGameResults = [];
@@ -121,8 +123,32 @@ function handleEnterKeydown(event) {
   }
 }
 
+// Controller: Handles filtering the cards
+function handleFilter(category) {
+  let filterList = [];
+
+  if (category === "all") {
+    filterList = currentGameResults;
+  } else if (category === "numbers") {
+    filterList = currentGameResults.filter((item) => typeof item === "number");
+  } else {
+    // for "Fizz", "Buzz", "FizzBuzz"
+    filterList = currentGameResults.filter((item) => item === category);
+  }
+
+  // Pass the filtered results to re-render the cards
+  renderGameCards(filterList);
+}
+
 /* 5. Event Listeners */
 buttonElement.addEventListener("click", handleFizzBuzz);
 clearButtonElement.addEventListener("click", handleClear);
 // Keyboard event: Trigger when pressing Enter
 inputElement.addEventListener("keydown", handleEnterKeydown);
+// Filters event
+btnFilterAll.addEventListener("click", function () {
+  handleFilter("all");
+});
+btnFilterFizz.addEventListener("click", function () {
+  handleFilter("Fizz");
+});
