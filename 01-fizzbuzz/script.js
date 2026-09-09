@@ -6,6 +6,9 @@ const clearButtonElement = document.querySelector("#btn-clear");
 const dashboardElement = document.querySelector("#dashboard");
 const displayElement = document.querySelector("#display");
 
+// Global State
+let currentGameResults = [];
+
 /* 2. Business Logic */
 // Logic function
 function fizzBuzzGame(number) {
@@ -90,12 +93,12 @@ function handleFizzBuzz() {
   }
 
   // Calculation: If data passes the check, Start and display normally
-  const gameResult = fizzBuzzGame(userNum);
+  currentGameResults = fizzBuzzGame(userNum);
 
   // Rendering Game Cards
   // Rendering Game Results Statistics
-  renderGameCards(gameResult);
-  updateDashboard(gameResult);
+  renderGameCards(currentGameResults);
+  updateDashboard(currentGameResults);
 
   // Auto clear & focus
   inputElement.value = "";
@@ -108,6 +111,7 @@ function handleClear() {
   displayElement.innerHTML = "";
   inputElement.focus();
   dashboardElement.innerHTML = "";
+  currentGameResults = [];
 }
 
 // Keyboard event handler
