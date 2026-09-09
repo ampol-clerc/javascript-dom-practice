@@ -20,7 +20,7 @@
         if it's divisible by 3 and 5, display "FizzBuzz" instead.
     -->
 
-    <!-- 1: HTML (UI Elements) -->
+    <!-- HTML (UI Elements) -->
     <div class="controls">
       <input
         type="number"
@@ -34,6 +34,15 @@
 
     <!-- Dashboard Summary -->
     <div id="dashboard" class="dashboard"></div>
+
+    <!-- Filter Buttons -->
+    <div id="filter-container" class="filter-container">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Fizz">Fizz</button>
+      <button class="filter-btn" data-filter="Buzz">Buzz</button>
+      <button class="filter-btn" data-filter="FizzBuzz">FizzBuzz</button>
+      <button class="filter-btn" data-filter="numbers">Numbers</button>
+    </div>
 
     <!-- Display element on page -->
     <div id="display"></div>
