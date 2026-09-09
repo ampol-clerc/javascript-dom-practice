@@ -98,6 +98,35 @@ h1 {
   color: purple;
 }
 
+.filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.filter-btn {
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 6px 14px;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: #f1f5f9;
+}
+
+.filter-btn.active {
+  background-color: #0f172a;
+  color: white;
+  border-color: #0f172a;
+}
+
 /* 5. Card Grid Display */
 /* Display : Grid / Card Layout */
 #display {
