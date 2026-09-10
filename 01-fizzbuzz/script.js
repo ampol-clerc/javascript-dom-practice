@@ -7,6 +7,9 @@ const dashboardElement = document.querySelector("#dashboard");
 const displayElement = document.querySelector("#display");
 const btnFilterAll = document.querySelector("#btn-filter-all");
 const btnFilterFizz = document.querySelector("#btn-filter-fizz");
+const btnFilterBuzz = document.querySelector("#btn-filter-buzz");
+const btnFilterFizzBuzz = document.querySelector("#btn-filter-fizzbuzz");
+const btnFilterNumbers = document.querySelector("#btn-filter-numbers");
 
 // Global State
 let currentGameResults = [];
@@ -135,7 +138,6 @@ function handleFilter(category) {
     // for "Fizz", "Buzz", "FizzBuzz"
     filterList = currentGameResults.filter((item) => item === category);
   }
-
   // Pass the filtered results to re-render the cards
   renderGameCards(filterList);
 }
@@ -146,9 +148,18 @@ clearButtonElement.addEventListener("click", handleClear);
 // Keyboard event: Trigger when pressing Enter
 inputElement.addEventListener("keydown", handleEnterKeydown);
 // Filters event
-btnFilterAll.addEventListener("click", function () {
+btnFilterAll.addEventListener("click", () => {
   handleFilter("all");
 });
-btnFilterFizz.addEventListener("click", function () {
+btnFilterFizz.addEventListener("click", () => {
   handleFilter("Fizz");
+});
+btnFilterBuzz.addEventListener("click", () => {
+  handleFilter("Buzz");
+});
+btnFilterFizzBuzz.addEventListener("click", () => {
+  handleFilter("FizzBuzz");
+});
+btnFilterNumbers.addEventListener("click", () => {
+  handleFilter("numbers");
 });
