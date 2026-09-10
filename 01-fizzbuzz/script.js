@@ -105,6 +105,9 @@ function handleFizzBuzz() {
   renderGameCards(currentGameResults);
   updateDashboard(currentGameResults);
 
+  // Set "All" filter to active status after calculating results
+  updateActiveButton(btnFilterAll);
+
   // Auto clear & focus
   inputElement.value = "";
   inputElement.focus();
@@ -117,6 +120,7 @@ function handleClear() {
   inputElement.focus();
   dashboardElement.innerHTML = "";
   currentGameResults = [];
+  updateActiveButton();
 }
 
 // Keyboard event handler
@@ -150,7 +154,11 @@ function updateActiveButton(activeBtn) {
   btnFilterFizzBuzz.classList.remove("active");
   btnFilterNumbers.classList.remove("active");
 
-  activeBtn.classList.add("active");
+  // Add the "active" class only if an element is provided
+  // (Skip this line if undefined is passed)
+  if (activeBtn) {
+    activeBtn.classList.add("active");
+  }
 }
 
 /* 5. Event Listeners */
