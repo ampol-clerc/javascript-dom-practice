@@ -142,6 +142,17 @@ function handleFilter(category) {
   renderGameCards(filterList);
 }
 
+// Helper to move active highlight
+function updateActiveButton(activeBtn) {
+  btnFilterAll.classList.remove("active");
+  btnFilterFizz.classList.remove("active");
+  btnFilterBuzz.classList.remove("active");
+  btnFilterFizzBuzz.classList.remove("active");
+  btnFilterNumbers.classList.remove("active");
+
+  activeBtn.classList.add("active");
+}
+
 /* 5. Event Listeners */
 buttonElement.addEventListener("click", handleFizzBuzz);
 clearButtonElement.addEventListener("click", handleClear);
@@ -150,16 +161,21 @@ inputElement.addEventListener("keydown", handleEnterKeydown);
 // Filters event
 btnFilterAll.addEventListener("click", () => {
   handleFilter("all");
+  updateActiveButton(btnFilterAll);
 });
 btnFilterFizz.addEventListener("click", () => {
   handleFilter("Fizz");
+  updateActiveButton(btnFilterFizz);
 });
 btnFilterBuzz.addEventListener("click", () => {
   handleFilter("Buzz");
+  updateActiveButton(btnFilterBuzz);
 });
 btnFilterFizzBuzz.addEventListener("click", () => {
   handleFilter("FizzBuzz");
+  updateActiveButton(btnFilterFizzBuzz);
 });
 btnFilterNumbers.addEventListener("click", () => {
   handleFilter("numbers");
+  updateActiveButton(btnFilterNumbers);
 });
