@@ -1,0 +1,68 @@
+/* RESET CSS : Modern Default Reset */
+
+/*
+  1 : Use `border-box` so that padding/borders do not 
+  increase the size of an element.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+  2 : Configure Smooth Scroll for an SPA (Single-Page Application)
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* 
+  3 : Reset the default styles for the `body` element and 
+  configure font smoothing for better readability on screens.
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+/* 
+  4 : Remove the list bullet points.
+*/
+ul,
+ol {
+  list-style: none;
+}
+
+/* 
+  5 : Remove the underline/color from the link 
+  (have it inherit the color from its parent)
+*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 
+  6 : Clear the button styles, ready for custom styling.
+*/
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
