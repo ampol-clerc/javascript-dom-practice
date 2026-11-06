@@ -13,8 +13,11 @@
       rel="stylesheet"
     />
 
-    <!-- Link CSS -->
+    <!-- Link Default Reset & Variables -->
+    <link rel="stylesheet" href="./css/variables.css" />
     <link rel="stylesheet" href="./css/reset.css" />
+
+    <!-- Link CSS -->
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/hero.css" />
   </head>
@@ -22,22 +25,21 @@
   <body>
     <!-- SECTION 0 : Header & Navigation -->
     <header id="header" class="header">
-      <div class="header-container">
-        <!-- Logo -->
-        <div class="logo">
-          <a href="#">Ampol.Dev</a>
-        </div>
-
-        <!-- Main Navigation -->
-        <nav id="main-nav" class="main-nav">
-          <ul class="nav-list">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+      <!-- Left : Logo -->
+      <div class="nav-left">
+        <a href="#" class="logo">AMPOL CLERC</a>
+        <a href="#" class="btn-outline-small">GET IN TOUCH ↗</a>
       </div>
+
+      <!-- Right : Menu Navigation -->
+      <nav id="nav-right" class="nav-right">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#home" class="nav-link">Home</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
@@ -60,9 +62,7 @@
             <!-- Action Buttons -->
             <div class="hero-actions">
               <a href="#contact" class="btn-primary">GET IN TOUCH ↗</a>
-              <a href="#resume" class="btn-outline" download
-                >DOWNLOAD RESUME ↓</a
-              >
+              <a href="#resume" class="btn-outline">DOWNLOAD RESUME ↓</a>
             </div>
           </div>
         </div>

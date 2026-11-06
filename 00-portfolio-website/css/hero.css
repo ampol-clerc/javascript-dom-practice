@@ -1,14 +1,5 @@
 /* HERO SECTION CSS */
 
-:root {
-  --bg-color: #222222;
-  --text-color: #e2e2e2;
-  --accent-color: #00ffa3;
-  --border-color: #2c2c2c;
-  --font-mono: "Roboto Mono", monospace;
-  --font-display: "Inter", sans-serif;
-}
-
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -18,7 +9,7 @@ body {
 .hero-section {
   display: flex;
   justify-content: center;
-  padding: 150px 2rem 50px 2rem;
+  padding: 100px 50px;
 }
 
 .hero-container {
@@ -28,13 +19,13 @@ body {
 
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 /* Manage images */
 .hero-image img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   background-color: #444444;
@@ -49,7 +40,7 @@ body {
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 800;
   letter-spacing: 1px;
   color: var(--text-color);

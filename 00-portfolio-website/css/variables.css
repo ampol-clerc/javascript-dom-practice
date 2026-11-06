@@ -1,0 +1,10 @@
+/* GLOBAL VARIABLES */
+
+:root {
+  --bg-color: #222222;
+  --text-color: #e2e2e2;
+  --accent-color: #00ffa3;
+  --border-color: #3f3f3f;
+  --font-mono: "Roboto Mono", monospace;
+  --font-display: "Inter", sans-serif;
+}

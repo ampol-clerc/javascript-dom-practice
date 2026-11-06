@@ -1,48 +1,57 @@
 /* HEADER & NAVIGATION CSS */
 
-:root {
-  --nav-text-black-color: #000000;
-  --nav-text-white-color: #ffffff;
-}
-
 .header {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  padding: 2rem 4rem;
-  z-index: 100;
-}
-
-.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1440px;
-  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* LOGO */
-.logo a {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: var(--nav-text-white-color);
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-/* NAVIGATION LIST */
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-color);
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.btn-outline-small {
+  font-family: var(--font-mono);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn-outline-small:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: 1px solid var(--accent-color);
+}
+
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
-.nav-list li a {
-  font-size: 1.1rem;
+.nav-link {
+  font-size: 1rem;
   font-weight: 500;
-  color: var(--nav-text-white-color);
+  color: var(--text-color);
   transition: opacity 0.3s ease;
 }
 
-.nav-list li a:hover {
-  opacity: 0.5;
+.nav-link:hover {
+  opacity: 0.6;
 }
