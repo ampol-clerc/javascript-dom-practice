@@ -1,0 +1,62 @@
+/* HERO SECTION CSS */
+
+:root {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #00ff88;
+  --border-color: #333333;
+  --font-mono: "Roboto Mono", monospace;
+  --font-display: "Archivo Black", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  padding: 200px 2rem 50px 2rem;
+}
+
+.hero-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #444444;
+  /* filter: grayscale(100%); */
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: var(--text-color);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
