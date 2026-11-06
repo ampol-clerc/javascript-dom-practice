@@ -1,12 +1,12 @@
 /* HERO SECTION CSS */
 
 :root {
-  --bg-color: #1a1a1a;
-  --text-color: #ffffff;
-  --accent-color: #00ff88;
-  --border-color: #333333;
+  --bg-color: #222222;
+  --text-color: #e2e2e2;
+  --accent-color: #00ffa3;
+  --border-color: #2c2c2c;
   --font-mono: "Roboto Mono", monospace;
-  --font-display: "Archivo Black", sans-serif;
+  --font-display: "Inter", sans-serif;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 .hero-section {
   display: flex;
   justify-content: center;
-  padding: 200px 2rem 50px 2rem;
+  padding: 150px 2rem 50px 2rem;
 }
 
 .hero-container {
@@ -31,6 +31,7 @@ body {
   gap: 4rem;
 }
 
+/* Manage images */
 .hero-image img {
   width: 250px;
   height: 250px;
@@ -40,23 +41,63 @@ body {
   /* filter: grayscale(100%); */
 }
 
+/* Group text */
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .hero-name {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  letter-spacing: 2px;
+  font-weight: 800;
+  letter-spacing: 1px;
   color: var(--text-color);
+  margin-bottom: 1rem;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
   line-height: 1.1;
   margin-bottom: 1.5rem;
   color: var(--text-color);
+}
+
+/* Group buttons */
+.hero-buttons {
+  display: flex;
+  /* gap: 1rem; */
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  color: var(--bg-color);
+  padding: 0.7rem 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+
+.btn-outline {
+  border: 1px solid var(--text-color);
+  padding: 0.7rem 2rem;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
 }
