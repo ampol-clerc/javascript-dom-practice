@@ -14,7 +14,6 @@ body {
 
 .hero-container {
   max-width: 2560px;
-  margin: 0 auto;
   width: 100%;
   display: flex;
   align-items: center;
@@ -23,12 +22,12 @@ body {
 
 /* Manage images */
 .hero-image img {
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  height: auto;
   border-radius: 50%;
   object-fit: cover;
-  background-color: #444444;
-  /* filter: grayscale(100%); */
 }
 
 /* Group text */
@@ -39,7 +38,8 @@ body {
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  font-size: clamp(1.2rem, 2vw + 0.5rem, 2rem);
   font-weight: 800;
   letter-spacing: 1px;
   color: var(--text-color);
@@ -48,7 +48,8 @@ body {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: 7rem;
+  /* font-size: 7rem; */
+  font-size: clamp(3rem, 5vw + 1rem, 7rem);
   font-weight: 800;
   letter-spacing: 1px;
   line-height: 1.1;
