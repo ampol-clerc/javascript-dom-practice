@@ -113,3 +113,14 @@
     display: block;
   }
 }
+
+/* Mobile : Max 750px */
+@media (max-width: 750px) {
+  .btn-outline-small {
+    display: none;
+  }
+
+  .header {
+    padding: 2rem 1rem;
+  }
+}

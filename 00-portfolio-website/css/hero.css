@@ -58,7 +58,7 @@ body {
 }
 
 /* Group buttons */
-.hero-buttons {
+.hero-actions {
   display: flex;
   /* gap: 1rem; */
 }
@@ -115,5 +115,47 @@ body {
   .hero-title {
     font-size: 3rem;
     margin-bottom: 1.2rem;
+  }
+}
+
+/* Mobile : Max 750px */
+@media (max-width: 750px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-content {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .hero-image img {
+    width: 200px;
+  }
+
+  .hero-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.7rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
   }
 }
