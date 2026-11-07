@@ -43,7 +43,7 @@ body {
   font-weight: 800;
   letter-spacing: 1px;
   color: var(--text-color);
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero-title {
@@ -91,4 +91,29 @@ body {
 .btn-outline:hover {
   background-color: var(--text-color);
   color: var(--bg-color);
+}
+
+/* RESPONSIVE HEADER */
+/* Tablet : Max 1000px */
+@media (max-width: 1000px) {
+  .hero-section {
+    padding: 60px 40px;
+  }
+
+  .hero-container {
+    gap: 2rem;
+  }
+
+  .hero-image img {
+    width: 170px;
+  }
+
+  .hero-name {
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+  }
 }
