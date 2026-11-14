@@ -101,16 +101,52 @@
 /* Tablet : Max 1000px */
 @media (max-width: 1000px) {
   .header {
+    position: relative;
     padding: 1.5rem 2rem;
     padding-right: 1rem;
   }
 
-  .nav-list {
-    display: none;
-  }
-
   .menu-toggle {
     display: block;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+
+    /* Hide it before : Click active */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+
+  .nav-list.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .menu-toggle.active .hamburger {
+    background-color: transparent;
+  }
+
+  .menu-toggle.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .menu-toggle.active .hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
   }
 }
 
