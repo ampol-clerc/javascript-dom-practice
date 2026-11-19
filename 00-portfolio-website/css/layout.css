@@ -1,0 +1,16 @@
+/* GLOBAL BASE & LAYOUT PRIMITIVES */
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+}
+
+/* Single Left Rail For All Sections */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--page-qutter);
+}

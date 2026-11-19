@@ -16,6 +16,7 @@
     <!-- Link Default Reset & Variables -->
     <link rel="stylesheet" href="./css/variables.css" />
     <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="./css/header.css" />
@@ -26,32 +27,34 @@
   <body>
     <!-- SECTION 0 : Header & Navigation -->
     <header id="header" class="header">
-      <!-- Left : Logo -->
-      <div class="nav-left">
-        <a href="#" class="logo">AMPOL CLERC</a>
-        <a href="#" class="btn-outline-small">GET IN TOUCH ↗</a>
+      <div class="container header-container">
+        <!-- Left : Logo -->
+        <div class="nav-left">
+          <a href="#hero" class="logo">AMPOL CLERC</a>
+          <a href="#contact" class="btn-outline-small">GET IN TOUCH ↗</a>
+        </div>
+
+        <!-- Right : Menu Navigation -->
+        <nav id="nav-right" class="nav-right">
+          <ul class="nav-list">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#hero" class="nav-link">Home</a></li>
+          </ul>
+
+          <!-- Hamburger Menu -->
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger"></span>
+          </button>
+        </nav>
       </div>
-
-      <!-- Right : Menu Navigation -->
-      <nav id="nav-right" class="nav-right">
-        <ul class="nav-list">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#home" class="nav-link">Home</a></li>
-        </ul>
-
-        <!-- Hamburger Menu -->
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <span class="hamburger"></span>
-        </button>
-      </nav>
     </header>
 
     <main>
       <!-- SECTION 1 : HERO -->
       <section id="hero" class="hero-section">
-        <div class="hero-container">
+        <div class="container hero-container">
           <!-- Left : Profile Image -->
           <div class="hero-image">
             <img
@@ -76,7 +79,7 @@
 
       <!-- SECTION 2 : ABOUT -->
       <section id="about" class="about-section">
-        <div class="about-container">
+        <div class="container about-container">
           <!-- Left Column : Title -->
           <div class="about-left">
             <h2 class="section-title">ABOUT</h2>
@@ -114,8 +117,12 @@
               frameworks.
             </p>
 
-            <!-- Action Button -->
-            <a href="#" target="_blank" class="btn-outline acction-btn-outline"
+            <!-- LinkedIn Button -->
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferer"
+              class="btn-outline acction-btn-outline"
               >LINKEDIN ↗</a
             >
           </div>
