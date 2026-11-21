@@ -13,7 +13,7 @@
 
   /* Layout & Fluid Spacing */
   --container-max-width: 1600px;
-  --page-qutter: clamp(1.25rem, 3.5vw, 4rem);
+  --page-gutter: clamp(1.25rem, 3.5vw, 4rem);
   --section-padding-y: clamp(3.5rem, 7vw, 6.5rem);
   --grid-gap: clamp(1.5rem, 4vw, 4rem);
 

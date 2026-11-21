@@ -12,15 +12,6 @@
   align-items: start;
 }
 
-/* Left Column */
-.section-title {
-  font-family: var(--font-display);
-  font-size: var(--text-section-title);
-  font-weight: 800;
-  letter-spacing: 1px;
-  line-height: 1.1;
-}
-
 /* Right Column */
 .about-right {
   display: flex;
@@ -62,13 +53,13 @@
     grid-template-columns: 1fr;
   }
 
-  .section-title {
+  .about-section .section-title {
     font-size: 1.75rem;
     margin-top: 3rem;
     margin-bottom: 4rem;
   }
 
-  .btn-outline {
+  .about-right .btn-outline {
     width: 100%;
     text-align: center;
   }
